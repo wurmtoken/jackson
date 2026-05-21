@@ -1,0 +1,20 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const site = 'https://jacksonlotstriping.com';
+const schemas = [{'@context':'https://schema.org','@type':'BreadcrumbList','itemListElement':[{'@type':'ListItem','position':1,'name':'Home','item':site+'/'},{'@type':'ListItem','position':2,'name':'Terms','item':site+'/terms/'}]}];
+---
+<BaseLayout title="Terms of Service | Jackson Lot Striping" description="Terms of service for using the Jackson Lot Striping website and requesting parking lot striping quotes." canonical={site + '/terms/'} schemas={schemas}>
+  <section class="page-hero"><div class="container"><p class="breadcrumb"><a href="/">Home</a> / Terms</p><h1>Terms of Service</h1><p>Terms for using this website and requesting service information.</p></div></section>
+  <section class="section"><div class="container narrow-copy">
+    <h2>Website use</h2>
+    <p>This website provides general information about parking lot striping, ADA parking lot compliance markings, fire lane striping, and re-striping services in Jackson, MI and nearby areas.</p>
+    <h2>Quotes and service availability</h2>
+    <p>Submitting a form or calling does not create a contract or guarantee service availability. Quotes, schedules, and project details are confirmed after review of the property, scope, access, pavement condition, and service area.</p>
+    <h2>No professional compliance guarantee</h2>
+    <p>ADA, fire lane, and local code requirements can vary by property and authority. Property owners and managers are responsible for confirming legal and regulatory requirements for their specific site.</p>
+    <h2>Third-party tools</h2>
+    <p>This website may use third-party tools for forms, analytics, hosting, and call tracking. Use of this website means you understand those tools may process technical or contact information as described in our privacy policy.</p>
+    <h2>Contact</h2>
+    <p>Questions about these terms can be sent to <a href="mailto:sales@datamations.com">sales@datamations.com</a>.</p>
+  </div></section>
+</BaseLayout>

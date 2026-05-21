@@ -1,0 +1,19 @@
+---
+const nav = [
+  ['Home','/'],['Services','/services/'],['Parking Lot Striping','/parking-lot-striping-jackson-mi/'],['ADA Compliance','/ada-parking-lot-compliance/'],['Fire Lane Striping','/fire-lane-striping/'],['Re-Striping','/parking-lot-restriping/'],['Contact','/contact/'],['Links','/links/']
+];
+---
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="/" aria-label="Jackson Lot Striping home">
+      <span class="brand-mark">JL</span>
+      <span>Jackson<br /><strong>Lot Striping</strong></span>
+    </a>
+    <a class="header-phone" href="tel:+15173654753">Call 517-365-4753</a>
+  </div>
+  <div class="nav-bar">
+    <div class="container nav-wrap">
+      <nav aria-label="Main navigation"><ul>{nav.map(([label,href]) => <li><a href={href}>{label}</a></li>)}</ul></nav>
+    </div>
+  </div>
+</header>

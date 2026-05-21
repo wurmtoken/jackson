@@ -1,0 +1,46 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+const {
+  title = 'Parking Lot Striping in Jackson, MI | Jackson Lot Striping',
+  description = 'Jackson Lot Striping provides parking lot striping, ADA parking lot compliance, fire lane striping, and re-striping in Jackson, Jackson County, and South Central Michigan.',
+  canonical = 'https://jacksonlotstriping.com/',
+  image = 'https://jacksonlotstriping.com/images/parking-lot-line-painting.webp',
+  schemas = []
+} = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={image} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={image} />
+    <link rel="preload" as="image" href="/images/parking-lot-line-painting.webp" type="image/webp" fetchpriority="high" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    {schemas.map((schema) => <script type="application/ld+json" set:html={JSON.stringify(schema)} />)}
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <Header />
+    <main id="main"><slot /></main>
+    <Footer />
+    <a class="sticky-call button" href="tel:+15173654753" aria-label="Call Jackson Lot Striping">Call 517-365-4753</a>
+    <script is:inline defer>
+      document.querySelectorAll('[data-year]').forEach((el)=>{el.textContent=new Date().getFullYear()})
+    </script>
+    <script type="text/javascript" src="//cdn.callrail.com/companies/209524575/a890a6f885521e4a6fd2/12/swap.js"></script>
+  </body>
+</html>

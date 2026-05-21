@@ -1,0 +1,11 @@
+---
+const links = [['Home','/'],['Services','/services/'],['Parking Lot Striping','/parking-lot-striping-jackson-mi/'],['ADA Parking Lot Compliance','/ada-parking-lot-compliance/'],['Fire Lane Striping','/fire-lane-striping/'],['Parking Lot Re-Striping','/parking-lot-restriping/'],['Contact','/contact/'],['Links','/links/'],['Privacy Policy','/privacy-policy/'],['Terms','/terms/']];
+---
+<footer class="footer">
+  <div class="container footer-grid">
+    <section aria-labelledby="footer-company"><h2 id="footer-company">Jackson Lot Striping</h2><p>Professional parking lot striping, pavement markings, ADA layout support, and fire lane striping for commercial properties in Jackson, MI.</p><p><strong>Phone:</strong> <a href="tel:+15173654753">517-365-4753</a><br /><strong>Email:</strong> <a href="mailto:sales@datamations.com">sales@datamations.com</a><br /><strong>Address:</strong> Jackson, MI</p></section>
+    <nav aria-label="Footer navigation"><h2>Pages</h2><ul>{links.map(([label,href]) => <li><a href={href}>{label}</a></li>)}</ul></nav>
+    <section aria-labelledby="footer-areas"><h2 id="footer-areas">Service Areas</h2><ul><li>Jackson, MI</li><li>Jackson County</li><li>Blackman Township</li><li>Summit Township</li><li>Grass Lake</li><li>Michigan Center</li><li>South Central Michigan</li></ul></section>
+  </div>
+  <div class="container"><p>© <span data-year></span> Jackson Lot Striping. All rights reserved.</p></div>
+</footer>

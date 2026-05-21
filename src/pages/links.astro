@@ -1,0 +1,19 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const site='https://jacksonlotstriping.com';
+const resources = [
+  { title: 'Example Business Resource', url: 'https://example.com', description: 'Short description of the website.' },
+  { title: 'City of Jackson', url: 'https://www.cityofjackson.org/', description: 'Local city information for Jackson residents and businesses.' },
+  { title: 'Jackson County', url: 'https://www.co.jackson.mi.us/', description: 'County resources for businesses and property owners in the Jackson area.' },
+  { title: 'Gulfport Lot Striping', url: 'https://gulfportlotstriping.com/', description: 'Parking lot striping services in Gulfport.' },
+  { title: 'Cedar Rapids Striping', url: 'https://cedarrapidsstriping.com/', description: 'Parking lot striping services in Cedar Rapids.' },
+  { title: 'Tulsa Lot Striping', url: 'https://tulsalotstriping.com/', description: 'Parking lot striping services in Tulsa.' },
+  { title: 'San Antonio Lot Striping', url: 'https://sanantoniolotstriping.com/', description: 'Parking lot striping services in San Antonio.' },
+  { title: 'Fort Wayne Lot Striping', url: 'https://fortwaynelotstriping.com/', description: 'Parking lot striping services in Fort Wayne.' }
+];
+const schemas=[{'@context':'https://schema.org','@type':'BreadcrumbList','itemListElement':[{'@type':'ListItem','position':1,'name':'Home','item':site+'/'},{'@type':'ListItem','position':2,'name':'Links','item':site+'/links/'}]}];
+---
+<BaseLayout title="Helpful Links | Jackson Lot Striping" description="Helpful local and business resources from Jackson Lot Striping. Add and edit resource links for Jackson, Jackson County, and South Central Michigan." canonical={site + '/links/'} schemas={schemas}>
+  <section class="page-hero"><div class="container"><p class="breadcrumb"><a href="/">Home</a> / Links</p><h1>Helpful Links & Resources</h1><p>Useful websites for Jackson property owners, businesses, and local resources.</p></div></section>
+  <section class="section"><div class="container"><div class="grid links-grid">{resources.map((link)=><article class="card"><h2>{link.title}</h2><p>{link.description}</p><a class="button" href={link.url} target="_blank" rel="noopener noreferrer">Visit Website</a></article>)}</div></div></section>
+</BaseLayout>

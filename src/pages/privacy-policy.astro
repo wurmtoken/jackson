@@ -1,0 +1,20 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const site = 'https://jacksonlotstriping.com';
+const schemas = [{'@context':'https://schema.org','@type':'BreadcrumbList','itemListElement':[{'@type':'ListItem','position':1,'name':'Home','item':site+'/'},{'@type':'ListItem','position':2,'name':'Privacy Policy','item':site+'/privacy-policy/'}]}];
+---
+<BaseLayout title="Privacy Policy | Jackson Lot Striping" description="Privacy policy for Jackson Lot Striping, including contact forms, call tracking, analytics, and local quote requests." canonical={site + '/privacy-policy/'} schemas={schemas}>
+  <section class="page-hero"><div class="container"><p class="breadcrumb"><a href="/">Home</a> / Privacy Policy</p><h1>Privacy Policy</h1><p>How Jackson Lot Striping handles website inquiries and contact information.</p></div></section>
+  <section class="section"><div class="container narrow-copy">
+    <h2>Information we collect</h2>
+    <p>When you submit a quote request or contact form, we may collect your name, phone number, email address, service requested, property details, and any message you provide.</p>
+    <h2>How we use information</h2>
+    <p>We use submitted information to respond to quote requests, schedule site visits, answer questions, provide parking lot striping service information, and improve our website and customer communication.</p>
+    <h2>Call tracking and analytics</h2>
+    <p>This website may use CallRail call tracking and Cloudflare analytics to understand phone call sources, measure website performance, and improve advertising. Call tracking may dynamically replace phone numbers on the website.</p>
+    <h2>Third-party services</h2>
+    <p>Form submissions may be processed by a third-party form service and delivered to our email inbox. We do not sell personal information submitted through this website.</p>
+    <h2>Contact</h2>
+    <p>For privacy questions, contact us at <a href="mailto:sales@datamations.com">sales@datamations.com</a> or call <a href="tel:+15173654753">517-365-4753</a>.</p>
+  </div></section>
+</BaseLayout>
