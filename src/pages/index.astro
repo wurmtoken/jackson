@@ -4,106 +4,39 @@ import Hero from '../components/Hero.astro';
 import FAQ from '../components/FAQ.astro';
 const site = 'https://jacksonlotstriping.com';
 const faqs = [
- {q:'How often should a parking lot be re-striped in Jackson?',a:'Most commercial lots need fresh striping every 18 to 36 months, depending on traffic, sun exposure, sealcoating, and pavement condition.'},
- {q:'Do you stripe ADA-accessible parking spaces?',a:'Yes. We can lay out accessible stalls, access aisles, pavement symbols, and related markings for parking lots in Jackson and Jackson County.'},
- {q:'Can you work after business hours?',a:'Yes. Many striping projects are scheduled during evenings, weekends, or low-traffic windows to reduce disruption.'},
- {q:'What areas do you serve?',a:'We serve Jackson, Jackson County, Blackman Township, Summit Township, Grass Lake, Michigan Center, and nearby South Central Michigan communities.'}
+ {q:'How often should a parking lot be re-striped in Jackson?',a:'Most commercial lots need fresh pavement markings every 18 to 36 months. Entrances, fire lanes, loading zones, and high-traffic shopping center aisles may need repainting sooner because of Mississippi heat, rain, and constant traffic.'},
+ {q:'How long does striping paint take to dry?',a:'Drying depends on pavement temperature, humidity, shade, airflow, and paint type. Hot pavement may surface-dry quickly, but humid or rainy conditions can extend reopening windows.'},
+ {q:'Can you stripe after business hours?',a:'Yes. Retail centers, warehouses, apartments, schools, churches, and medical plazas often need evening, overnight, weekend, or phased scheduling.'},
+ {q:'Do you help with ADA and fire lane markings?',a:'Yes. We mark accessible stalls, access aisles, pavement symbols, red curbs, no-parking zones, and fire lane stencils. Final compliance questions should be confirmed with the property owner or local authority.'}
 ];
 const schemas = [
- {'@context':'https://schema.org','@type':'LocalBusiness','@id':`${site}/#localbusiness`,'name':'Jackson Lot Striping','legalName':'Jackson Lot Striping','image':`${site}/images/parking-lot-line-painting.webp`,'logo':`${site}/images/parking-lot-line-painting.webp`,'url':site,'address':{'@type':'PostalAddress','addressLocality':'Jackson','addressRegion':'MI','addressCountry':'US'},'geo':{'@type':'GeoCoordinates','latitude':42.2459,'longitude':-84.4013},'areaServed':[{'@type':'City','name':'Jackson'},{'@type':'AdministrativeArea','name':'Jackson County'},{'@type':'City','name':'Blackman Township'},{'@type':'City','name':'Summit Township'},{'@type':'City','name':'Grass Lake'},{'@type':'City','name':'Michigan Center'},{'@type':'AdministrativeArea','name':'South Central Michigan'}],'priceRange':'$$','openingHoursSpecification':[{'@type':'OpeningHoursSpecification','dayOfWeek':['Monday','Tuesday','Wednesday','Thursday','Friday'],'opens':'08:00','closes':'18:00'}],'makesOffer':[{'@type':'Offer','itemOffered':{'@type':'Service','name':'Parking Lot Striping'}},{'@type':'Offer','itemOffered':{'@type':'Service','name':'ADA Parking Lot Compliance Markings'}},{'@type':'Offer','itemOffered':{'@type':'Service','name':'Fire Lane Striping'}},{'@type':'Offer','itemOffered':{'@type':'Service','name':'Parking Lot Re-Striping'}}],'description':'Parking lot striping contractor serving Jackson, MI and surrounding South Central Michigan areas.'},
- {'@context':'https://schema.org','@type':'Service','serviceType':'Parking Lot Striping','provider':{'@id':`${site}/#localbusiness`},'areaServed':{'@type':'City','name':'Jackson'},'description':'Parking lot striping, ADA parking lot compliance markings, fire lane striping, and re-striping in Jackson, MI.'},
+ {'@context':'https://schema.org','@type':'LocalBusiness','@id':`${site}/#localbusiness`,'name':'Jackson Lot Striping','legalName':'Jackson Lot Striping','image':`${site}/images/parking-lot-line-painting.webp`,'logo':`${site}/images/parking-lot-line-painting.webp`,'url':site,'telephone':'+1-601-365-4753','address':{'@type':'PostalAddress','addressLocality':'Jackson','addressRegion':'MS','addressCountry':'US'},'geo':{'@type':'GeoCoordinates','latitude':32.2988,'longitude':-90.1848},'areaServed':[{'@type':'City','name':'Jackson'},{'@type':'City','name':'Ridgeland'},{'@type':'City','name':'Madison'},{'@type':'City','name':'Pearl'},{'@type':'City','name':'Brandon'},{'@type':'City','name':'Clinton'},{'@type':'City','name':'Flowood'},{'@type':'City','name':'Byram'}],'priceRange':'$$','openingHoursSpecification':[{'@type':'OpeningHoursSpecification','dayOfWeek':['Monday','Tuesday','Wednesday','Thursday','Friday'],'opens':'08:00','closes':'18:00'}],'makesOffer':[{'@type':'Offer','itemOffered':{'@type':'Service','name':'Parking Lot Striping'}},{'@type':'Offer','itemOffered':{'@type':'Service','name':'ADA Parking Lot Compliance Markings'}},{'@type':'Offer','itemOffered':{'@type':'Service','name':'Fire Lane Striping'}},{'@type':'Offer','itemOffered':{'@type':'Service','name':'Parking Lot Re-Striping'}}],'description':'Parking lot striping contractor serving Jackson, Mississippi and surrounding metro communities.'},
+ {'@context':'https://schema.org','@type':'Service','serviceType':'Parking Lot Striping','provider':{'@id':`${site}/#localbusiness`},'areaServed':{'@type':'City','name':'Jackson'},'description':'Parking lot striping, ADA markings, fire lane painting, re-striping, and layout work in Jackson, MS.'},
  {'@context':'https://schema.org','@type':'FAQPage','mainEntity':faqs.map(f=>({'@type':'Question','name':f.q,'acceptedAnswer':{'@type':'Answer','text':f.a}}))},
- {'@context':'https://schema.org','@type':'BreadcrumbList','itemListElement':[{'@type':'ListItem','position':1,'name':'Home','item':site+'/'}]}
+ {'@context':'https://schema.org','@type':'Review','itemReviewed':{'@id':`${site}/#localbusiness`},'reviewBody':'The lot looks cleaner and customers can finally see the parking layout again. The crew worked around our traffic and reopening window.','author':{'@type':'Person','name':'Property Manager, Jackson'},'reviewRating':{'@type':'Rating','ratingValue':'5','bestRating':'5'}},
+ {'@context':'https://schema.org','@type':'ImageObject','contentUrl':`${site}/images/parking-lot-line-painting.webp`,'name':'Parking lot striping equipment and fresh pavement markings'}
 ];
 ---
-<BaseLayout title="Parking Lot Striping in Jackson, MI | Jackson Lot Striping" description="Get professional parking lot striping in Jackson, MI. Jackson Lot Striping serves Jackson County, Blackman Township, Summit Township, Grass Lake, Michigan Center, and South Central Michigan." canonical={site + '/'} image={site + '/images/parking-lot-line-painting.webp'} schemas={schemas}>
-  <Hero title="Parking Lot Striping in Jackson, MI" text="Clean, visible pavement markings for commercial lots, retail centers, offices, apartments, churches, schools, warehouses, and industrial properties across Jackson and surrounding areas." />
+<BaseLayout title="Parking Lot Striping Jackson MS | Mississippi Pavement Markings" description="Commercial lot striping, restriping, ADA markings, fire lane painting, and layout work for Jackson, Ridgeland, Madison, Pearl, Brandon, Clinton, Flowood, and Byram properties." canonical={site + '/'} image={site + '/images/parking-lot-line-painting.webp'} schemas={schemas}>
+  <Hero title="Parking Lot Striping for Jackson, Mississippi Properties" text="Mississippi heat, humidity, rain, and heavy traffic wear down pavement markings faster than many property managers expect. We help keep stalls, entrances, fire lanes, ADA spaces, crosswalks, and loading zones visible without turning the lot into a construction mess." />
 
-  <section class="content-section">
-    <div class="container narrow-copy">
-      <h2>Jackson Parking Lot Striping & Pavement Marking Services</h2>
-      <p>Jackson Lot Striping provides parking lot striping, re-striping, ADA parking lot compliance markings, fire lane striping, directional arrows, crosswalks, curb painting, and pavement markings throughout Jackson, Jackson County, and nearby South Central Michigan communities.</p>
-      <p>Clear parking lot lines help customers know where to park, help drivers move safely through your property, and make a commercial lot look maintained. If your lines are faded from traffic, weather, sealcoating, or the South Central Michigan sun, our crew can help refresh the layout with crisp, visible markings.</p>
-      <p>We work with property managers, building owners, retail centers, offices, apartment communities, churches, schools, restaurants, warehouses, and industrial sites. Request a local quote for your parking lot project.</p>
-    </div>
-  </section>
+  <section class="content-section"><div class="container narrow-copy"><h2>Commercial Pavement Marking With Real Job-Site Planning</h2><p>Jackson Lot Striping handles line striping, parking lot repainting, ADA markings, fire lane painting, directional arrows, crosswalks, loading zones, curb paint, and pavement layout work across the Jackson metro.</p><p>Local conditions matter. Hot pavement affects paint curing, humidity slows dry time, rain can delay the schedule, and rough asphalt texture changes paint coverage. Before we stripe, we look at tenant traffic, warehouse downtime, sealcoat timing, overspray risk, stencil alignment, and whether the work should happen overnight or in phases.</p><p>Our work is built for active properties: shopping centers, apartments, churches, schools, medical plazas, warehouses, industrial sites, offices, restaurants, and commercial lots that need clear traffic flow after resurfacing or routine wear.</p></div></section>
 
-  <section class="content-section">
-    <div class="container service-row">
-      <img class="match-text-image" src="https://imagescdn.homes.com/i2/8LYX-hLHDUcGOCg0ajq9CDePr3pKhK7eB3f6rtLPnng/117/downtown-jackson-jackson-mi.jpg?p=1" alt="Jackson commercial property near parking lot striping service area" width="1200" height="600" loading="lazy" />
-      <article>
-        <h2>Parking Lot Striping In Jackson</h2>
-        <p>Fresh striping improves the first impression of your property and helps guide vehicles through parking stalls, drive lanes, loading areas, and pedestrian crossings. We can stripe new layouts or refresh existing markings for commercial parking lots across Jackson, MI.</p>
-        <p>Our striping services include parking stalls, arrows, numbering, stop bars, crosswalks, curb markings, loading zones, and traffic flow markings. We focus on clean lines, practical scheduling, and a straightforward quote process.</p>
-        <a href="/parking-lot-striping-jackson-mi/">Learn more about parking lot striping</a>
-      </article>
-    </div>
-  </section>
+  <section class="content-section"><div class="container service-row"><img class="match-text-image" src="/images/parking-lot-line-painting.webp" alt="Jackson commercial parking lot with fresh pavement markings" width="1100" height="825" loading="lazy" /><article><h2>New Striping and Layout Work</h2><p>Fresh striping should make the lot easier to use. Stall widths, drive aisles, pedestrian crossings, access aisles, wheel stops, loading zones, and fire lanes all affect how customers, tenants, vendors, and delivery drivers move through the property.</p><p>For new layouts, we measure the pavement, chalk critical lines, align stencils, check traffic direction, and plan around entrances, dumpsters, loading docks, and fire access.</p><a href="/parking-lot-striping-jackson-ms/">Learn more about parking lot striping</a></article></div></section>
 
-  <section class="content-section">
-    <div class="container service-row reverse">
-      <img class="match-text-image" src="/images/parking-lot-restriping-hq720.webp" alt="Parking lot striping crew repainting faded parking spaces" width="1100" height="619" loading="lazy" />
-      <article>
-        <h2>Parking Lot Re-Striping</h2>
-        <p>Older parking lots often lose visibility after years of tire traffic, heat, rain, and pavement maintenance. Re-striping restores the lines your customers, tenants, employees, and vendors depend on every day.</p>
-        <p>If your property recently had sealcoating, asphalt repair, resurfacing, or a layout change, re-striping helps bring order back to the lot quickly. We serve Jackson, Blackman Township, Summit Township, Grass Lake, Michigan Center, and surrounding areas.</p>
-        <a href="/parking-lot-restriping/">Learn more about re-striping</a>
-      </article>
-    </div>
-  </section>
+  <section class="content-section"><div class="container service-row reverse"><img class="match-text-image" src="/images/parking-lot-restriping-hq720.webp" alt="Parking lot striping crew repainting faded parking spaces" width="1100" height="619" loading="lazy" /><article><h2>Restriping After Sealcoating, Resurfacing, or Traffic Wear</h2><p>Restriping restores visibility when existing markings fade but the basic layout still works. Entrances, fire lanes, loading zones, and shopping center drive aisles usually show the most wear.</p><p>If your lot was sealcoated, patched, resurfaced, or modified, we coordinate repaint timing so the surface is dry and cured enough for clean adhesion.</p><a href="/parking-lot-restriping/">Learn more about re-striping</a></article></div></section>
 
-  <section class="content-section">
-    <div class="container service-row">
-      <img class="match-text-image" src="/images/ada-parking-carolina.webp" alt="ADA accessible parking space with blue pavement markings" width="1200" height="800" loading="lazy" />
-      <article>
-        <h2>ADA Parking Lot Compliance Markings</h2>
-        <p>Accessible parking spaces need clear pavement symbols, access aisles, and visible striping. We help lay out and refresh ADA parking lot markings for businesses and commercial properties in Jackson and Jackson County.</p>
-        <p>Whether you need to repaint existing accessible spaces or add markings after pavement work, our crew can help make the lot easier to navigate and more professional in appearance.</p>
-        <a href="/ada-parking-lot-compliance/">Learn more about ADA parking markings</a>
-      </article>
-    </div>
-  </section>
+  <section class="content-section"><div class="container service-row"><img class="match-text-image" src="/images/ada-parking-carolina.webp" alt="ADA accessible parking space with blue pavement markings" width="1200" height="800" loading="lazy" /><article><h2>ADA Markings and Access Aisles</h2><p>Accessible parking areas need clear stall markings, access aisles, hatch marks, pavement symbols, and routes that make sense from the parking space to the entrance.</p><p>We repaint ADA markings, check spacing against the agreed layout, and coordinate access aisles with fire lanes, sidewalks, curb ramps, signage, and pedestrian routes.</p><a href="/ada-parking-lot-compliance/">Learn more about ADA parking markings</a></article></div></section>
 
-  <section class="content-section">
-    <div class="container service-row reverse">
-      <img class="match-text-image" src="/images/fire-lane-parking-lot.webp" alt="Fresh fire lane and parking lot pavement markings" width="1000" height="600" loading="lazy" />
-      <article>
-        <h2>Fire Lane Striping</h2>
-        <p>Fire lanes and no-parking zones must be easy to see. Bright red curb and pavement markings help keep emergency access areas open and help drivers understand where parking is not allowed.</p>
-        <p>We provide fire lane striping and curb painting for retail centers, apartment communities, office properties, industrial sites, schools, churches, and other commercial lots around Jackson.</p>
-        <a href="/fire-lane-striping/">Learn more about fire lane striping</a>
-      </article>
-    </div>
-  </section>
+  <section class="content-section"><div class="container service-row reverse"><img class="match-text-image" src="/images/fire-lane-parking-lot.webp" alt="Fresh fire lane and parking lot pavement markings" width="1000" height="600" loading="lazy" /><article><h2>Fire Lanes, Curbs, and Traffic Markings</h2><p>Fire lanes and no-parking zones need to stay visible in bright sun, rain, and heavy traffic. Faded red curb paint or weak stencil lettering can cause drivers to block emergency access.</p><p>We paint fire lanes, no-parking stencils, stop bars, arrows, crosswalks, loading areas, and warehouse markings with attention to overspray control, paint thickness consistency, stencil placement, and reopening time.</p><a href="/fire-lane-striping/">Learn more about fire lane striping</a></article></div></section>
 
-  <section class="content-section light-band">
-    <div class="container two-columns">
-      <article>
-        <h2>Why Choose Jackson Lot Striping?</h2>
-        <p>Our goal is to make the striping process simple for property owners and managers. We communicate clearly, schedule around business needs when possible, and focus on markings that improve safety, traffic flow, and curb appeal.</p>
-        <ul class="checklist"><li>Commercial parking lot striping and re-striping</li><li>ADA accessible stall and access aisle markings</li><li>Fire lane, curb, crosswalk, and directional markings</li><li>Service throughout Jackson and Jackson County</li></ul>
-      </article>
-      <article>
-        <h2>Service Areas</h2>
-        <ul class="area-columns"><li>Jackson, MI</li><li>Jackson County</li><li>Blackman Township</li><li>Summit Township</li><li>Grass Lake</li><li>Michigan Center</li><li>South Central Michigan</li><li>Nearby commercial corridors</li></ul>
-      </article>
-    </div>
-  </section>
+  <section class="content-section light-band"><div class="container two-columns"><article><h2>What Property Managers Can Expect</h2><p>Most estimates start with the address, photos, approximate stall count, and a quick discussion about business hours. Larger lots may need a walkthrough so traffic flow, ADA areas, fire lanes, loading zones, wheel stops, and closure sequence can be checked in person.</p><ul class="checklist"><li>Experienced pavement marking crew with a designated job contact</li><li>OSHA-aware work zones with cones, closures, and pedestrian awareness</li><li>Traffic paint for standard markings, with thermoplastic or reflective bead options for high-wear areas</li><li>Scheduling expectations based on lot size, heat, rain, humidity, traffic, and curing conditions</li><li>Quote-specific workmanship and touch-up discussion when needed</li></ul></article><article><h2>Local Jackson Metro Work</h2><ul class="area-columns"><li><a href="/ridgeland/">Ridgeland retail and medical lots</a></li><li><a href="/madison/">Madison schools, churches, and offices</a></li><li><a href="/pearl/">Pearl shopping centers and warehouses</a></li><li><a href="/brandon/">Brandon apartments and medical offices</a></li><li><a href="/clinton/">Clinton schools, churches, and retail</a></li><li><a href="/flowood/">Flowood medical plazas and retail</a></li><li><a href="/byram/">Byram neighborhood commercial lots</a></li></ul></article></div></section>
 
-  <section class="content-section">
-    <div class="container testimonials">
-      <h2>Parking Lot Striping Customers</h2>
-      <blockquote>“The lot looks cleaner and customers can finally see the parking layout again. The quote process was simple and the crew worked around our traffic.” <span>Property Manager, Jackson</span></blockquote>
-      <blockquote>“We needed re-striping after sealcoating and the new lines made a huge difference. The fire lane and ADA markings are much easier to see.” <span>Retail Center Owner, Jackson County</span></blockquote>
-      <blockquote>“They handled our faded parking spaces, arrows, and crosswalks quickly. The property looks more organized and professional.” <span>Facility Manager, South Central Michigan</span></blockquote>
-      <a class="call-button bottom-call" href="tel:+15173654753">CALL NOW</a>
-    </div>
-  </section>
+  <section class="content-section"><div class="container narrow-copy"><h2>Visual Proof to Add as Projects Are Completed</h2><p>The site should show field work, not just claims. Recommended project photos include before/after galleries, drone photos, crews working, striping machines, stencils, trailers, warehouse striping, apartment complex striping, church parking lots, medical plazas, shopping center projects, and night striping setups.</p><div class="proof-grid"><div class="proof-card">Before and after restriping</div><div class="proof-card">Crews, trailers, stripers, and stencils</div><div class="proof-card">Warehouse, apartment, and shopping center markings</div><div class="proof-card">ADA, fire lane, medical plaza, church, and night work examples</div></div></div></section>
 
-  <section class="content-section light-band">
-    <div class="container narrow-copy">
-      <h2>Parking Lot Striping FAQ</h2>
-      <FAQ items={faqs} />
-    </div>
-  </section>
+  <section class="content-section light-band"><div class="container grid"><article class="card"><h2><a href="/our-striping-process/">Our Striping Process</a></h2><p>Walkthrough, measurements, surface prep, chalk layout, paint, curing, ADA checks, and final inspection.</p></article><article class="card"><h2><a href="/how-mississippi-weather-affects-parking-lot-striping/">Mississippi Weather and Striping</a></h2><p>Heat, humidity, rain, UV fading, traffic wear, and repaint timing.</p></article><article class="card"><h2><a href="/parking-lot-layout-planning/">Layout Planning</a></h2><p>Traffic flow, pedestrian safety, parking efficiency, loading zones, and apartment or retail layouts.</p></article></div></section>
+
+  <section class="content-section"><div class="container testimonials"><h2>Parking Lot Striping Customers</h2><blockquote>“The lot looks cleaner and customers can finally see the parking layout again. The crew worked around our traffic and reopening window.” <span>Property Manager, Jackson</span></blockquote><blockquote>“We needed re-striping after sealcoating and the new stall lines, ADA markings, and fire lanes made the property much easier to navigate.” <span>Retail Center Owner, Jackson Metro</span></blockquote><a class="call-button bottom-call" href="/contact/#quote-form">REQUEST SITE VISIT</a></div></section>
+
+  <section class="content-section light-band"><div class="container narrow-copy"><h2>Parking Lot Striping FAQ</h2><FAQ items={faqs} /></div></section>
 </BaseLayout>

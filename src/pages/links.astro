@@ -1,18 +1,9 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 const site='https://jacksonlotstriping.com';
-const resources = [
-  { title: 'City of Jackson', url: 'https://www.cityofjackson.org/', description: 'Local city information for Jackson residents and businesses.' },
-  { title: 'Jackson County', url: 'https://www.co.jackson.mi.us/', description: 'County resources for businesses and property owners in the Jackson area.' },
-  { title: 'Gulfport Lot Striping', url: 'https://gulfportlotstriping.com/', description: 'Parking lot striping services in Gulfport.' },
-  { title: 'Cedar Rapids Striping', url: 'https://cedarrapidsstriping.com/', description: 'Parking lot striping services in Cedar Rapids.' },
-  { title: 'Tulsa Lot Striping', url: 'https://tulsalotstriping.com/', description: 'Parking lot striping services in Tulsa.' },
-  { title: 'San Antonio Lot Striping', url: 'https://sanantoniolotstriping.com/', description: 'Parking lot striping services in San Antonio.' },
-  { title: 'Fort Wayne Lot Striping', url: 'https://fortwaynelotstriping.com/', description: 'Parking lot striping services in Fort Wayne.' }
-];
-const schemas=[{'@context':'https://schema.org','@type':'BreadcrumbList','itemListElement':[{'@type':'ListItem','position':1,'name':'Home','item':site+'/'},{'@type':'ListItem','position':2,'name':'Links','item':site+'/links/'}]}];
+const schemas=[{'@context':'https://schema.org','@type':'BreadcrumbList','itemListElement':[{'@type':'ListItem','position':1,'name':'Home','item':site+'/'},{'@type':'ListItem','position':2,'name':'Jackson Parking Lot Resources','item':site+'/links/'}]}];
 ---
-<BaseLayout title="Helpful Links | Jackson Lot Striping" description="Helpful local and business resources from Jackson Lot Striping. Add and edit resource links for Jackson, Jackson County, and South Central Michigan." canonical={site + '/links/'} schemas={schemas}>
-  <section class="page-hero"><div class="container"><p class="breadcrumb"><a href="/">Home</a> / Links</p><h1>Helpful Links & Resources</h1><p>Useful websites for Jackson property owners, businesses, and local resources.</p></div></section>
-  <section class="section"><div class="container"><div class="grid links-grid">{resources.map((link)=><article class="card"><h2>{link.title}</h2><p>{link.description}</p><a class="button" href={link.url} target="_blank" rel="noopener noreferrer">Visit Website</a></article>)}</div></div></section>
+<BaseLayout title="Jackson Parking Lot Resources | Jackson Lot Striping" description="Local pavement marking, ADA, weather, sealcoating, fire lane, and asphalt maintenance resources for Jackson MS property managers." canonical={site + '/links/'} schemas={schemas}>
+  <section class="page-hero"><div class="container"><p class="breadcrumb"><a href="/">Home</a> / Resources</p><h1>Jackson Parking Lot Resources</h1><p>Practical resources for property managers planning striping, ADA markings, fire lanes, sealcoating, and layout work around Jackson, Mississippi.</p></div></section>
+  <section class="section"><div class="container grid"><article class="card"><h2><a href="/our-striping-process/">Our Process</a></h2><p>How a striping job moves from walkthrough and measurements to chalk layout, paint, curing, and final inspection.</p></article><article class="card"><h2><a href="/how-mississippi-weather-affects-parking-lot-striping/">Mississippi Weather</a></h2><p>Heat, humidity, rain, UV fading, traffic wear, and realistic repaint schedules.</p></article><article class="card"><h2><a href="/ada-compliance-guide/">ADA Guide</a></h2><p>Access aisles, stall spacing, signage coordination, fire lane visibility, and repaint triggers.</p></article><article class="card"><h2>Sealcoating Coordination</h2><p>Fresh sealcoat needs cure time before repainting. Scheduling paint too early can shorten marking life and create tracking issues.</p></article><article class="card"><h2>Project Photos</h2><p>Add before/after galleries, drone photos, night striping, warehouse markings, apartment lots, churches, medical plazas, and shopping center projects as completed work is documented.</p></article><article class="card"><h2>Local Planning Notes</h2><p>Apartment tenant coordination, warehouse downtime, school and church schedules, and retail traffic windows all affect when striping should happen.</p></article></div></section>
 </BaseLayout>

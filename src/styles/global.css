@@ -340,6 +340,7 @@ p { margin: 0 0 17px; }
 }
 
 .checklist,
+.check-list,
 .area-columns {
   padding-left: 22px;
   margin: 0;
@@ -440,6 +441,14 @@ blockquote span {
   border: 1px solid var(--line);
 }
 
+.proof-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 18px; }
+.proof-card { padding: 15px; background: #fff; border: 1px solid var(--line); }
+.process-list { counter-reset: step; display: grid; gap: 12px; margin: 0; padding: 0; list-style: none; }
+.process-list li { position: relative; padding: 16px 16px 16px 54px; background: #fff; border: 1px solid var(--line); }
+.process-list li::before { counter-increment: step; content: counter(step); position: absolute; left: 16px; top: 16px; display: grid; place-items: center; width: 26px; height: 26px; color: #fff; background: var(--green); border-radius: 50%; font-weight: 800; }
+.cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 18px; }
+.field-note { color: var(--muted); font-size: .88rem; font-weight: 400; }
+
 .footer {
   margin-top: 34px;
   padding: 35px 0 18px;
@@ -491,6 +500,7 @@ blockquote span {
   .grid,
   .cards,
   .links-grid,
+  .proof-grid,
   .area-list {
     grid-template-columns: 1fr;
   }
