@@ -3,26 +3,28 @@ const { title, text } = Astro.props;
 ---
 <section class="hero">
   <div class="container">
-    <p class="kicker">Jackson parking lot striping contractor</p>
+    <p class="kicker">Jackson metro pavement marking crew</p>
     <div class="hero-grid">
       <div class="hero-media">
         <h1>{title}</h1>
         <img src="/images/parking-lot-line-painting.webp" alt="Parking lot line painting crew striping fresh parking spaces" width="1100" height="825" fetchpriority="high" />
-        <a class="call-button" href="tel:+16013654753">CALL NOW</a>
+        <a class="call-button" href="/contact/#quote-form">Request Site Visit</a>
       </div>
       <aside class="quote-card" aria-labelledby="hero-form-title">
-        <div class="quote-heading" id="hero-form-title">New Free Quote</div>
-        <p class="required-note">* Indicates required field</p>
-        <form class="form-grid" name="hero-quote" method="post" action="https://formsubmit.co/sales@datamations.com">
+        <div class="quote-heading" id="hero-form-title">Request Quote</div>
+        <p class="required-note">Photos and the property address help us respond faster.</p>
+        <form class="form-grid" name="hero-quote" method="post" enctype="multipart/form-data" action="https://formsubmit.co/sales@datamations.com">
           <input type="hidden" name="_subject" value="Jackson Lot Striping quote request" />
           <input type="hidden" name="_template" value="table" />
           <input type="hidden" name="_captcha" value="false" />
-          <label>Name *<input name="name" type="text" autocomplete="name" required /></label>
-          <label>Phone Number *<input name="phone" type="tel" autocomplete="tel" required /></label>
+          <label>Name<input name="name" type="text" autocomplete="name" required /></label>
+          <label>Phone<input name="phone" type="tel" autocomplete="tel" required /></label>
           <label>Email<input name="email" type="email" autocomplete="email" /></label>
-          <label>Service Needed<select name="service" aria-label="Service needed"><option>Parking lot striping</option><option>ADA parking lot compliance</option><option>Fire lane striping</option><option>Parking lot re-striping</option></select></label>
-          <label>Comment *<textarea name="message" rows="6" required></textarea></label>
-          <button class="submit-button" type="submit">Submit</button>
+          <label>Property Address<input name="property_address" type="text" /></label>
+          <label>Service Needed<select name="service" aria-label="Service needed"><option>Request Site Visit</option><option>Upload Project Photos</option><option>Request ADA Evaluation</option><option>Get Overnight Striping Quote</option><option>Re-striping after sealcoating</option><option>Apartment or retail phasing</option><option>Warehouse or loading-zone markings</option><option>Fire lane repainting</option></select></label>
+          <label>Photos<input name="photos" type="file" accept="image/*" multiple /></label>
+          <label>Notes<textarea name="message" rows="4" placeholder="Sealcoating date, rain delay concerns, tenant traffic, loading docks, faded fire lanes, ADA concerns, preferred work window..."></textarea></label>
+          <button class="submit-button" type="submit">Send Request</button>
         </form>
       </aside>
     </div>

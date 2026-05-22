@@ -442,7 +442,11 @@ blockquote span {
 }
 
 .proof-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 18px; }
-.proof-card { padding: 15px; background: #fff; border: 1px solid var(--line); }
+.proof-card,
+.proof-grid figure { margin: 0; padding: 0; background: #fff; border: 1px solid var(--line); }
+.proof-card { padding: 15px; }
+.proof-grid img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.proof-grid figcaption { padding: 10px 12px; color: #444; font-size: .92rem; }
 .process-list { counter-reset: step; display: grid; gap: 12px; margin: 0; padding: 0; list-style: none; }
 .process-list li { position: relative; padding: 16px 16px 16px 54px; background: #fff; border: 1px solid var(--line); }
 .process-list li::before { counter-increment: step; content: counter(step); position: absolute; left: 16px; top: 16px; display: grid; place-items: center; width: 26px; height: 26px; color: #fff; background: var(--green); border-radius: 50%; font-weight: 800; }
