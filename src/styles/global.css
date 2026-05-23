@@ -281,6 +281,22 @@ textarea { resize: vertical; }
   color: var(--muted);
 }
 
+.trust-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.trust-strip span {
+  padding: 8px 12px;
+  color: #333;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--green);
+  font-weight: 700;
+}
+
 .content-section,
 .section {
   padding: 28px 0;
