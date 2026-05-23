@@ -1,0 +1,24 @@
+---
+const {
+  eyebrow,
+  title,
+  lead,
+  image = '/images/parking-lot-line-painting.webp',
+  imageAlt = 'Parking lot striping crew working on commercial pavement markings',
+  current = title,
+  ctaHref = '/contact/#quote-form',
+  ctaLabel = 'Request Site Visit',
+  secondaryHref = '/services/',
+  secondaryLabel = 'View Services'
+} = Astro.props;
+---
+<section class="plain-page-head">
+  <div class="container narrow-copy">
+    <p class="breadcrumb"><a href="/">Home</a> / {current}</p>
+    {eyebrow && <p class="eyebrow">{eyebrow}</p>}
+    <h1>{title}</h1>
+    <img class="page-featured-image" src={image} alt={imageAlt} width="1100" height="825" loading="eager" />
+    {lead && <p class="lead-copy">{lead}</p>}
+    <div class="cta-row"><a class="button" href={ctaHref}>{ctaLabel}</a><a class="btn secondary" href={secondaryHref}>{secondaryLabel}</a></div>
+  </div>
+</section>

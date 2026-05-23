@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import PlainPageHeader from '../components/PlainPageHeader.astro';
 const site = 'https://jacksonlotstriping.com';
 
 export function getStaticPaths() {
@@ -28,9 +29,35 @@ export function getStaticPaths() {
 const { slug, page } = Astro.props;
 const breadcrumb = {'@context':'https://schema.org','@type':'BreadcrumbList','itemListElement':[{'@type':'ListItem','position':1,'name':'Home','item':site+'/'},{'@type':'ListItem','position':2,'name':page.h1,'item':`${site}/${slug}/`}]};
 const service = {'@context':'https://schema.org','@type':'Service','name':page.h1,'provider':{'@type':'LocalBusiness','name':'Jackson Lot Striping'},'areaServed':page.city || 'Jackson MS','url':`${site}/${slug}/`};
+const imageByType = {
+  process: '/images/contractor-striping-machine.webp',
+  weather: '/images/parking-lot-restriping-hq720.webp',
+  thermo: '/images/fresh-parking-lines.webp',
+  ada: '/images/ada-parking-carolina.webp',
+  layout: '/images/parking-lot-line-painting.webp',
+  sealcoat: '/images/re-striping-640w.webp',
+  firevisibility: '/images/fire-lane-parking-lot.webp',
+  overnight: '/images/parking-lot-striping-hero.webp',
+  warehouse: 'https://www.kvrcoatings.co.uk/wp-content/uploads/2023/03/Walkways-3-1080x675.jpg',
+  areas: '/images/jackson-commercial-property.webp',
+  local: '/images/jackson-commercial-property.webp'
+};
+const imageAltByType = {
+  process: 'Parking lot striping machine and crew equipment used for commercial pavement markings',
+  weather: 'Parking lot restriping after faded pavement markings and weather wear',
+  thermo: 'Fresh pavement markings in a commercial parking lot',
+  ada: 'ADA accessible parking stall with blue pavement markings and access aisle',
+  layout: 'Commercial parking lot striping layout and fresh stall lines',
+  sealcoat: 'Parking lot restriping after pavement maintenance and sealcoating',
+  firevisibility: 'Fire lane and no parking pavement markings in a commercial lot',
+  overnight: 'Commercial parking lot prepared for pavement striping work',
+  warehouse: 'Warehouse pedestrian walkways and industrial floor traffic markings',
+  areas: 'Jackson commercial property area with pavement marking needs',
+  local: `${page.city || 'Jackson'} commercial parking lot pavement marking area`
+};
 ---
 <BaseLayout title={page.title} description={page.description} canonical={`${site}/${slug}/`} schemas={[breadcrumb, service]}>
-  <section class="page-hero"><div class="container"><p class="breadcrumb"><a href="/">Home</a> / {page.h1}</p><p class="eyebrow">{page.eyebrow}</p><h1>{page.h1}</h1><p>{page.lead}</p><div class="cta-row"><a class="button" href="/contact/#quote-form">Request Site Visit</a><a class="btn secondary" href="/services/">View Services</a></div></div></section>
+  <PlainPageHeader eyebrow={page.eyebrow} current={page.h1} title={page.h1} lead={page.lead} image={imageByType[page.type] || '/images/parking-lot-line-painting.webp'} imageAlt={imageAltByType[page.type] || 'Commercial parking lot pavement markings'} secondaryHref="/services/" secondaryLabel="View Services" />
   {page.type === 'process' && <section class="section"><div class="container narrow-copy"><h2>How a Typical Job Moves</h2><ol class="process-list"><li><strong>Site walkthrough:</strong> We look at entrances, drive aisles, ADA spaces, fire lanes, loading zones, pedestrian paths, drainage, pavement texture, and active traffic.</li><li><strong>Measurements:</strong> Stall widths, aisle dimensions, access aisles, wheel stop spacing, crosswalks, and stencil locations are measured against the usable pavement.</li><li><strong>Layout planning:</strong> We confirm traffic direction, tenant access, closure sequence, and whether the lot should be striped in phases.</li><li><strong>Surface prep:</strong> Loose debris, moisture, and problem areas are addressed before painting.</li><li><strong>Chalk layout:</strong> Critical lines, stencils, and arrows are chalked so spacing problems are caught early.</li><li><strong>Striping application:</strong> Lines, arrows, ADA symbols, curbs, fire lanes, and stencils are applied with attention to paint thickness, overspray, and alignment.</li><li><strong>Drying and curing:</strong> Reopening depends on heat, humidity, shade, airflow, and paint type.</li><li><strong>ADA verification:</strong> Accessible stalls, access aisles, symbols, and routes are checked against the agreed layout.</li><li><strong>Final inspection:</strong> We walk the job, remove cones when safe, and note any areas that need touch-up.</li></ol></div></section>}
   {page.type === 'weather' && <section class="section"><div class="container split"><article><h2>Why Mississippi Lots Fade Quickly</h2><p>Heat, humidity, heavy rain, UV exposure, and constant tire traffic all shorten marking life. Entrances, fire lanes, stop bars, loading zones, and shopping center drive aisles usually fade before low-traffic parking rows.</p><p>Striping schedules also depend on pavement moisture. If rain moves in or humidity slows drying, it is better to adjust the schedule than paint over a surface that will not hold a clean line.</p></article><aside class="card"><h2>Typical Repaint Triggers</h2><ul class="check-list"><li>Lines are hard to see at night</li><li>Fire lanes lose red visibility</li><li>ADA markings fade or peel</li><li>Sealcoating or resurfacing is complete</li><li>Entrances and loading zones show heavy tire wear</li></ul></aside></div></section>}
   {page.type === 'thermo' && <section class="section"><div class="container split"><article><h2>Standard Traffic Paint</h2><p>Standard traffic paint is the practical choice for most parking stalls, arrows, curbs, and routine restriping. It is cost-effective and works well when pavement is dry and properly prepared.</p><h2>Thermoplastic</h2><p>Thermoplastic costs more but can last longer in high-wear areas such as stop bars, crosswalks, loading zones, warehouse traffic points, and heavy-turn entrances. It is not always worth the cost if the pavement is failing or likely to be resurfaced soon.</p></article><aside class="card"><h2>Mississippi Use Cases</h2><p>Reflective beads can improve night visibility. Warehouse lanes and loading areas may benefit from more durable markings, while standard paint is usually the better fit for routine stall lines.</p></aside></div></section>}
