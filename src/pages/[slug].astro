@@ -30,7 +30,7 @@ const { slug, page } = Astro.props;
 const breadcrumb = {'@context':'https://schema.org','@type':'BreadcrumbList','itemListElement':[{'@type':'ListItem','position':1,'name':'Home','item':site+'/'},{'@type':'ListItem','position':2,'name':page.h1,'item':`${site}/${slug}/`}]};
 const service = {'@context':'https://schema.org','@type':'Service','name':page.h1,'provider':{'@type':'LocalBusiness','name':'Jackson Lot Striping'},'areaServed':page.city || 'Jackson MS','url':`${site}/${slug}/`};
 const imageByType = {
-  process: '/images/contractor-striping-machine.webp',
+  process: '/images/process.png',
   weather: '/images/parking-lot-restriping-hq720.webp',
   thermo: '/images/fresh-parking-lines.webp',
   ada: '/images/ada-parking-carolina.webp',
@@ -39,7 +39,7 @@ const imageByType = {
   firevisibility: '/images/fire-lane-parking-lot.webp',
   overnight: '/images/parking-lot-striping-hero.webp',
   warehouse: 'https://www.kvrcoatings.co.uk/wp-content/uploads/2023/03/Walkways-3-1080x675.jpg',
-  areas: '/images/jackson-commercial-property.webp',
+  areas: 'https://skylinespace.nyc3.cdn.digitaloceanspaces.com/media/images/jackson_03_9468_up.jpg',
   local: '/images/jackson-commercial-property.webp'
 };
 const imageAltByType = {
@@ -52,7 +52,7 @@ const imageAltByType = {
   firevisibility: 'Fire lane and no parking pavement markings in a commercial lot',
   overnight: 'Commercial parking lot prepared for pavement striping work',
   warehouse: 'Warehouse pedestrian walkways and industrial floor traffic markings',
-  areas: 'Jackson commercial property area with pavement marking needs',
+  areas: 'Jackson Mississippi skyline and commercial service area',
   local: `${page.city || 'Jackson'} commercial parking lot pavement marking area`
 };
 ---
