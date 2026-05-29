@@ -13,10 +13,9 @@ const { title, text } = Astro.props;
       <aside class="quote-card" aria-labelledby="hero-form-title">
         <div class="quote-heading" id="hero-form-title">Request Quote</div>
         <p class="required-note">Photos and the property address help us respond faster.</p>
-        <form class="form-grid" name="hero-quote" method="post" enctype="multipart/form-data" action="https://formsubmit.co/sales@datamations.com">
-          <input type="hidden" name="_subject" value="Jackson Lot Striping quote request" />
-          <input type="hidden" name="_template" value="table" />
-          <input type="hidden" name="_captcha" value="false" />
+        <form class="form-grid" name="hero-quote" method="post" enctype="multipart/form-data" action="https://api.web3forms.com/submit">
+          <input type="hidden" name="access_key" value="cc5a272b-2fea-464a-8999-adec3dbddef4" />
+          <input type="hidden" name="subject" value="Jackson Lot Striping quote request" />
           <label>Name<input name="name" type="text" autocomplete="name" required /></label>
           <label>Phone<input name="phone" type="tel" autocomplete="tel" required /></label>
           <label>Email<input name="email" type="email" autocomplete="email" /></label>
